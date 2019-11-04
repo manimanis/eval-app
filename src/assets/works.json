@@ -1,0 +1,191 @@
+[
+  {
+    "id": 1,
+    "titre": "Leçon 2 : Dessiner avec Tkinter",
+    "description": "Dans cette leçon on présente comment utiliser le canvas du Tkinter qui est une meilleure alternative à Turtle, vue en 1ère année.",
+    "codes": [
+      {
+        "codeId": 1,
+        "titre": "Lignes & Rectangles",
+        "description": "",
+        "langage": "python",
+        "code": "# This code source is for educational purpose\n#-------------------------------------------------\n\n# import all the contents of the tkinter module\nfrom tkinter import *\n\n# create the application window\nmaster = Tk()\n\n# create a canvas to draw into\nw = Canvas(master, width=200, height=100)\n\n# make the application window the same size as the canvas\nw.pack()\n\n# draw a black line\nw.create_line(0, 0, 200, 100)\n\n# draw a red dashed line\nw.create_line(0, 100, 200, 0, fill=\"red\", dash=(4, 4))\n\n# draw a blue filled rectangle\nw.create_rectangle(50, 25, 150, 75, fill=\"blue\")\n\n# make the window interactive\nmainloop()",
+        "images": []
+      },
+      {
+        "codeId": 2,
+        "titre": "Pièces Tetris",
+        "description": "On va utiliser les commandes de dessins pour dessiner les pièces du jeu Tetris.",
+        "langage": "python",
+        "code": "# import all the contents of the tkinter module\nfrom tkinter import *\n\n# create the application window\nmaster = Tk()\n\n# create a canvas to draw into\nw = Canvas(master, width=880, height=100)\n\n# make the application window the same size as the canvas\nw.pack()\n\n# forme 1\nw.create_rectangle(5, 5, 35, 35, fill=\"#2196f3\")\nw.create_rectangle(5, 35, 35, 65, fill=\"#2196f3\")\nw.create_rectangle(35, 35, 65, 65, fill=\"#2196f3\")\nw.create_rectangle(35, 65, 65, 95, fill=\"#2196f3\")\n\n# forme 2\nw.create_rectangle(130, 35, 160, 65, fill=\"#f44336\")\nw.create_rectangle(130, 65, 160, 95, fill=\"#f44336\")\nw.create_rectangle(160, 5, 190, 35, fill=\"#f44336\")\nw.create_rectangle(160, 35, 190, 65, fill=\"#f44336\")\n\n# forme 3\nw.create_rectangle(255, 5, 285, 35, fill=\"#e91e63\")\nw.create_rectangle(255, 35, 285, 65, fill=\"#e91e63\")\nw.create_rectangle(255, 65, 285, 95, fill=\"#e91e63\")\nw.create_rectangle(285, 65, 315, 95, fill=\"#e91e63\")\n\n# forme 4\nw.create_rectangle(380, 65, 410, 95, fill=\"#9c27b0\")\nw.create_rectangle(410, 5, 440, 35, fill=\"#9c27b0\")\nw.create_rectangle(410, 35, 440, 65, fill=\"#9c27b0\")\nw.create_rectangle(410, 65, 440, 95, fill=\"#9c27b0\")\n\n# forme 5\nw.create_rectangle(535, 5, 565, 35, fill=\"#673ab7\")\nw.create_rectangle(505, 35, 535, 65, fill=\"#673ab7\")\nw.create_rectangle(535, 35, 565, 65, fill=\"#673ab7\")\nw.create_rectangle(565, 35, 595, 65, fill=\"#673ab7\")\n\n# forme 6\nw.create_rectangle(630, 5, 660, 35, fill=\"#03a9f4\")\nw.create_rectangle(660, 5, 690, 35, fill=\"#03a9f4\")\nw.create_rectangle(630, 35, 660, 65, fill=\"#03a9f4\")\nw.create_rectangle(660, 35, 690, 65, fill=\"#03a9f4\")\n\n# forme 7\nw.create_rectangle(755, 5, 785, 35, fill=\"#009688\")\nw.create_rectangle(785, 5, 815, 35, fill=\"#009688\")\nw.create_rectangle(815, 5, 845, 35, fill=\"#009688\")\nw.create_rectangle(845, 5, 875, 35, fill=\"#009688\")\n\nmainloop()",
+        "images": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "titre": "Leçon 3 : Dessiner une maison",
+    "description": "On va utiliser Tkinter pour dessiner une maison.",
+    "codes": [
+      {
+        "codeId": 3,
+        "titre": "",
+        "description": "",
+        "langage": "python",
+        "code": "from tkinter import *\n\n# Créer la fenêtre\nw = Tk()\n\n# Créer l'espace de dessin\nc = Canvas(w, width=454, height=354)\nc.pack()\n\n# Dessiner la cheminée\nc.create_rectangle(318, 2, 356, 60, fill=\"#800000\")\n\n# Dessiner le toit\nc.create_polygon(2, 102, 452, 102, 227, 2, fill=\"#ffa500\", outline=\"#000\")\n\n# Dessiner le mur\nc.create_rectangle(27, 102, 427, 352, fill=\"#ffd700\")\n\n# Dessiner la fenêtre du toit\nc.create_oval(202, 27, 252, 77, fill=\"#5f9ea0\", width=\"2\")\nc.create_line(202, 52, 252, 52, width=\"5\")\nc.create_line(227, 27, 227, 77, width=\"5\")\n\n# Dessiner la porte\nc.create_rectangle(72, 190, 173, 352, fill=\"#ffa500\")\n\n# Dessiner les fenêtres\nc.create_rectangle(188, 190, 282, 284, fill=\"#afeeee\", width=\"3\")\nc.create_line(235, 190, 235, 284, width=\"5\")\n\nc.create_rectangle(300, 190, 394, 284, fill=\"#afeeee\", width=\"3\")\nc.create_line(347, 190, 347, 284, width=\"5\")\n\nmainloop()",
+        "images": []
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "titre": "Leçon 4 : Dessiner la grille de Tetris",
+    "description": "",
+    "codes": [
+      {
+        "codeId": 4,
+        "titre": "",
+        "langage": "python",
+        "code": "from tkinter import *\n\n# Constantes Globales\nXCELLS, YCELLS = 12, 20     # Nombre de cellules dans la grille\nWCELL, HCELL = 25, 25       # Dimensions d'une cellule (pixels)\nWGRILLE = WCELL * XCELLS    # Largeur de la Grille (pixels)\nHGRILLE = HCELL * YCELLS    # Hauteur de la Grille (pixels)\nXGRILLE, YGRILLE = 10, 10   # Position de la Grille (pixels)\nWCANVAS = WGRILLE + XGRILLE * 2  # Largeur du Canvas\nHCANVAS = HGRILLE + YGRILLE * 2  # Hauteur du Canvas\n\n# Couleurs possibles des cellules\nCOLORS = [\"#2196f3\", \"#f44336\", \"#e91e63\",\n          \"#9c27b0\", \"#673ab7\", \"#03a9f4\", \"#009688\"]\n\n# Créer la fenêtre\nwindow = Tk()\n\n# Créer le Canvas de la grille du jeu\ngcanvas = Canvas(window, width=WCANVAS, height=HCANVAS)\ngcanvas.pack()\n\n# Dessiner les bords de la grille\ngcanvas.create_rectangle(4, 4, WCANVAS - 2, HCANVAS - 2, width=4)\ngcanvas.create_rectangle(XGRILLE, XGRILLE,\n                         WCANVAS - XGRILLE+2, HCANVAS - XGRILLE+2, width=2, outline=\"#999999\")\n\n# Initialiser la grille\nfor i in range(XCELLS):\n    for j in range(YCELLS):\n        gcanvas.create_rectangle(XGRILLE + WCELL * i, YGRILLE + HCELL * j,\n                                 XGRILLE + WCELL * (i+1), YGRILLE + HCELL * (j+1), fill=\"#586241\")\n\nmainloop()"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "titre": "Leçon 5 : Feu de circulation",
+    "description": "Nous allons utiliser les fonctions de dessin et les timers pour dessiner un feu de circulation.",
+    "codes": [
+      {
+        "codeId": 5,
+        "titre": "Version initiale statique",
+        "langage": "python",
+        "code": "from tkinter import *\n\n# Créer la fenêtre\nwin = Tk()\n\n# Constantes\nD_FEU = 80     # Diamètre d'un feu\nESPACEMENT = 20  # Espacement entre les feux\nW_CANVAS = D_FEU + 2 * ESPACEMENT\nH_CANVAS = 3 * D_FEU + 4 * ESPACEMENT\n\n# Créer un Canvas\nw = Canvas(win, width=W_CANVAS, height=H_CANVAS)\nw.pack()\n\n# Créer trois cercles de diamètre 100\nw.create_oval(ESPACEMENT, ESPACEMENT,\n              ESPACEMENT + D_FEU, ESPACEMENT + D_FEU, fill='red', width=3)\nw.create_oval(ESPACEMENT, 2 * ESPACEMENT + D_FEU,\n              ESPACEMENT + D_FEU, 2*(ESPACEMENT + D_FEU), fill='yellow', width=3)\nw.create_oval(ESPACEMENT, 3 * ESPACEMENT + 2 * D_FEU,\n              ESPACEMENT + D_FEU, 3*(ESPACEMENT + D_FEU), fill='green', width=3)\n\nmainloop()"
+      },
+      {
+        "codeId": 6,
+        "titre": "Version clignotante",
+        "langage": "python",
+        "code": "from tkinter import *\n\n# Créer la fenêtre\nwin = Tk()\n\n# Constantes\nD_FEU = 80     # Diamètre d'un feu\nESPACEMENT = 20  # Espacement entre les feux\nW_CANVAS = D_FEU + 2 * ESPACEMENT\nH_CANVAS = 3 * D_FEU + 4 * ESPACEMENT\n\n# Créer un Canvas\nw = Canvas(win, width=W_CANVAS, height=H_CANVAS)\nw.pack()\n\n# Créer trois cercles de diamètre 100\nrouge = w.create_oval(ESPACEMENT, ESPACEMENT,\n                      ESPACEMENT + D_FEU, ESPACEMENT + D_FEU, fill='red', width=3)\njaune = w.create_oval(ESPACEMENT, 2 * ESPACEMENT + D_FEU,\n                      ESPACEMENT + D_FEU, 2*(ESPACEMENT + D_FEU), fill='yellow', width=3)\nvert = w.create_oval(ESPACEMENT, 3 * ESPACEMENT + 2 * D_FEU,\n                     ESPACEMENT + D_FEU, 3*(ESPACEMENT + D_FEU), fill='green', width=3)\n\n\ndef clignoter():\n    global w\n\n    # faire clignoter le rouge\n    fill = w.itemcget(rouge, 'fill')\n    if fill != '':\n        w.itemconfigure(rouge, fill='')\n    else:\n        w.itemconfigure(rouge, fill='red')\n\n    # faire clignoter le jaune\n    fill = w.itemcget(jaune, 'fill')\n    if fill != '':\n        w.itemconfigure(jaune, fill='')\n    else:\n        w.itemconfigure(jaune, fill='yellow')\n\n    # faire clignoter le jaune\n    fill = w.itemcget(vert, 'fill')\n    if fill != '':\n        w.itemconfigure(vert, fill='')\n    else:\n        w.itemconfigure(vert, fill='green')\n\n    w.after(1000, clignoter)\n\n\nw.after(1000, clignoter)\n\nmainloop()"
+      },
+      {
+        "codeId": 7,
+        "titre": "Version fonctionnelle",
+        "langage": "python",
+        "code": "from tkinter import *\n\n# Créer la fenêtre\nwin = Tk()\n\n# Constantes\nD_FEU = 80     # Diamètre d'un feu\nESPACEMENT = 20  # Espacement entre les feux\nW_CANVAS = D_FEU + 2 * ESPACEMENT\nH_CANVAS = 3 * D_FEU + 4 * ESPACEMENT\n\n# Créer un Canvas\nw = Canvas(win, width=W_CANVAS, height=H_CANVAS)\nw.pack()\n\n# Créer trois cercles de diamètre 100\nrouge = w.create_oval(ESPACEMENT, ESPACEMENT,\n                      ESPACEMENT + D_FEU, ESPACEMENT + D_FEU, fill='', width=3)\njaune = w.create_oval(ESPACEMENT, 2 * ESPACEMENT + D_FEU,\n                      ESPACEMENT + D_FEU, 2*(ESPACEMENT + D_FEU), fill='', width=3)\nvert = w.create_oval(ESPACEMENT, 3 * ESPACEMENT + 2 * D_FEU,\n                     ESPACEMENT + D_FEU, 3*(ESPACEMENT + D_FEU), fill='', width=3)\n\n\ndef allumer_jaune():\n    w.itemconfigure(rouge, fill='')\n    w.itemconfigure(jaune, fill='yellow')\n    w.after(1000, allumer_vert)\n\n\ndef allumer_vert():\n    w.itemconfigure(jaune, fill='')\n    w.itemconfigure(vert, fill='green')\n    w.after(5000, allumer_rouge)\n\n\ndef allumer_rouge():\n    w.itemconfigure(vert, fill='')\n    w.itemconfigure(rouge, fill='red')\n    w.after(5000, allumer_jaune)\n\n\nallumer_rouge()\n\nmainloop()"
+      },
+      {
+        "codeId": 8,
+        "titre": "Version finale",
+        "langage": "python",
+        "code": "from tkinter import *\n\n# Créer la fenêtre\nwin = Tk()\n\n# Constantes\nD_FEU = 80     # Diamètre d'un feu\nESPACEMENT = 20  # Espacement entre les feux\nW_CANVAS = D_FEU + 2 * ESPACEMENT\nH_CANVAS = 3 * D_FEU + 4 * ESPACEMENT\n\n# Créer un Canvas\nw = Canvas(win, width=W_CANVAS, height=H_CANVAS)\nw.pack()\n\n# Créer trois cercles de diamètre 100\nrouge = w.create_oval(ESPACEMENT, ESPACEMENT,\n                      ESPACEMENT + D_FEU, ESPACEMENT + D_FEU, fill='', width=3)\njaune = w.create_oval(ESPACEMENT, 2 * ESPACEMENT + D_FEU,\n                      ESPACEMENT + D_FEU, 2*(ESPACEMENT + D_FEU), fill='', width=3)\nvert = w.create_oval(ESPACEMENT, 3 * ESPACEMENT + 2 * D_FEU,\n                     ESPACEMENT + D_FEU, 3*(ESPACEMENT + D_FEU), fill='', width=3)\n\ncompteur = 0\nclignoteur_id = None\n\n\ndef allumer_jaune():\n    w.itemconfigure(rouge, fill='')\n    w.itemconfigure(jaune, fill='yellow')\n    win.after(1000, allumer_vert)\n\n\ndef allumer_vert():\n    global compteur, clignoteur_id\n    w.itemconfigure(jaune, fill='')\n    w.itemconfigure(vert, fill='green')\n    compteur = 0\n    clignoteur_id = win.after(5000, clignoter_jaune)\n\n\ndef allumer_rouge():\n    w.itemconfigure(vert, fill='')\n    w.itemconfigure(rouge, fill='red')\n    win.after(5000, allumer_jaune)\n\n\ndef clignoter_jaune():\n    global compteur, clignoteur_id\n    win.after_cancel(clignoteur_id)\n    if compteur < 6:\n        etat = w.itemcget(jaune, 'fill')\n        if etat == 'yellow':\n            w.itemconfigure(jaune, fill='')\n        else:\n            w.itemconfigure(jaune, fill='yellow')\n        compteur += 1\n        clignoteur_id = win.after(500, clignoter_jaune)\n    else:\n        win.after(1000, allumer_rouge)\n\n\nallumer_rouge()\n\nmainloop()"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "titre": "Leçon 6 : Jeu Pierre-Ciseaux-Feuille",
+    "description": "L'objectif de ce jeu est de présenter les nombres aléatoires et les boucles.",
+    "codes": [
+      {
+        "codeId": 9,
+        "titre": "",
+        "langage": "python",
+        "code": "import random\n\nCHOIX = ['Ciseaux', 'Feuille', 'Pierre']\n\n\ndef bat(j1, j2):\n return ((j2 - j1) % 3) == 1\n\n\ndef choix_joueur():\n while True:\n try:\n j1 = int(input(('\\n'.join('{}. {}'.format(i, CHOIX[i]) for i in range(\n len(CHOIX))) + '\\nQuel est votre choix ? ')))\n if 0 <= j1 <= 2:\n return j1\n except:\n pass\n print('> Choix incorrect')\n\n\ndef gagnant(pia, pj1):\n if pia > pj1:\n print('Vous avez perdu {} contre {}'.format(pia, pj1))\n elif pia < pj1:\n print('Vous avez gagné {} contre {}'.format(pj1, pia))\n else:\n print('Match nul')\n\n##########################################################\n# Programme Principal\n\n\nprint('Jeu Pierre - Ciseaux - Feuille')\n\npia, pj1 = 0, 0\nfor i in range(3):\n print()\n ia = random.randint(0, 2)\n j1 = choix_joueur()\n\n if bat(j1, ia):\n print('\\nJoueur gagne : {} bat {}'.format(CHOIX[j1], CHOIX[ia]))\n pj1 += 1\n elif bat(ia, j1):\n print('\\nOrdinateur gagne : {} est battu(e) par {}'.format(\n CHOIX[j1], CHOIX[ia]))\n pia += 1\n else:\n print('\\nManche nulle : {} et {} match nul.'.format(\n CHOIX[j1], CHOIX[ia]))\n\nprint('\\nLe jeu est terminé')\ngagnant(pia, pj1)"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "titre": "Leçon 7 : Actions simples",
+    "description": "L'objectif de cette leçon est de présenter les actions simples ainsi que les sous chaînes.",
+    "codes": [
+      {
+        "codeId": 10,
+        "titre": "Calcul de somme",
+        "description": "Calcul de la somme de deux entiers",
+        "langage": "python",
+        "code": "# Afficher la somme de deux entiers\n\n# saisie des données\na = int(input('Donner a : '))\nb = int(input('Donner b : '))\n\n# calcul\ns = a + b\n\n# affichage du résultat\nprint(a, '+', b, '=', s)"
+      },
+      {
+        "codeId": 11,
+        "titre": "Conversion de température",
+        "description": "Conversion automatique de température °C -> °F",
+        "langage": "python",
+        "code": "# Conversion de température\n\n# Saisie de la température\nt = input('Donner une température en °C/°F (exemple : 15C) : ')\n\n# extraire les chiffres et l'unité\nt1, u1 = float(t[:-1]), t[-1]\n\nif u1 == 'C':  # si la température en °C --> °F\n    t2 = 9/5*t1+32\n    u2 = 'F'\nelif u1 == 'F':  # si la température en °F --> °C\n    t2 = 5/9*(t1-32)\n    u2 = 'C'\n\n# Afficher le résultat\nprint(t1, u1, '=', t2, u2)"
+      },
+      {
+        "codeId": 12,
+        "titre": "Table de multiplication",
+        "description": "Affichage de la table de multiplication",
+        "langage": "python",
+        "code": "# Affichage de la table de multiplication\n\nn = int(input('Donner n : '))\n\nfor i in range(n+1):\n    if i == 0:\n        print('%2s' % ('*',), end='')\n    else:\n        print('%4d' % (i,), end='')\nprint()\n\nfor i in range(1, n+1):\n    print('%2d' % i, end='')\n    for j in range(1, n+1):\n        print('%4d' % (i*j,), end='')\n    print()"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "titre": "Leçon 8 : Calcul du temps de révision",
+    "description": "L'objectif de cette leçon est de présenter comment améliorer progressivement un programme.",
+    "codes": [
+      {
+        "codeId": 13,
+        "titre": "Version 1",
+        "description": "Dans cette version on contrôle la saisie d'une heure pour vérifier qu'elle est valide et qu'elle est supèrieure ou égale à une heure donnée.",
+        "langage": "python",
+        "code": "def time_to_min(time):\n    \"\"\"Convertit un temps au format 'hh:mm' en un nombre de minutes.\"\"\"\n    hh = int(time[:2])\n    mm = int(time[3:])\n    return 60 * hh + mm\n\n\ndef min_to_time(min):\n    \"\"\"Convertit un nombre de minutes en une heure au format 'hh:mm' \"\"\"\n    hh = min // 60, \n    mm = min % 60\n    return '%02d:%02d' % (hh, mm)\n\n\ndef saisie_heure(msg, hdm):\n    \"\"\"Assure la saisie d'une date valide qui :\n    - respecte le format 'hh:mm'\n    - est dans l'intervalle '00:00' à '23:59'\n    - est supèrieure ou égale à hdm.\"\"\"\n    while True:\n        heure = input(msg)\n        valide = len(heure) == 5 and heure[2] == ':'\n        if valide:\n            hh = int(heure[:2])\n            mm = int(heure[3:])\n            valide = 0 <= hh <= 23 and 0 <= mm <= 59\n        if valide:\n            valide = heure >= hdm\n        if valide:\n            return heure\n        print('Saisie incorrecte.')\n\n\n# Heures de révision de Physique\nhd1 = saisie_heure(\"Heure début de révision (Physique) : \", '00:00')\nhf1 = saisie_heure(\"Heure fin de révision (Physique) : \", hd1)\n\n# Heures de révision de Math\nhd2 = saisie_heure(\"Heure début de révision (Mathématiques) : \", hf1)\nhf2 = saisie_heure(\"Heure fin de révision (Mathématiques) : \", hd2)\n\n# Calculer la durée de révision de Physique en minutes\ntr1 = time_to_min(hf1) - time_to_min(hd1)\n# Calculer la durée de révision de Math en minutes\ntr2 = time_to_min(hf2) - time_to_min(hd2)\n# Calculer la durée totale de révision en minutes\ntt = tr1 + tr2\n\n# Affichage des résultats\nprint('Temps de révision')\nprint('Physique : ', min_to_time(tr1))\nprint('Math : ', min_to_time(tr2))\nprint('Durée Totale : ', min_to_time(tt))"
+      },
+      {
+        "codeId": 14,
+        "titre": "Version 2",
+        "description": "Dans cette version on implémente une fonction qui saisit l'heure de début/et de fin de révision d'une matière.",
+        "langage": "python",
+        "code": "\ndef time_to_min(time):\n    \"\"\"Convertit un temps au format 'hh:mm' en un nombre de minutes.\"\"\"\n    hh = int(time[:2])\n    mm = int(time[3:])\n    return 60 * hh + mm\n\n\ndef min_to_time(min):\n    \"\"\"Convertit un nombre de minutes en une heure au format 'hh:mm' \"\"\"\n    hh, mm = min // 60, min % 60\n    return '%02d:%02d' % (hh, mm)\n\n\ndef saisie_heure(msg, hdm):\n    \"\"\"Assure la saisie d'une date valide qui :\n    - respecte le format 'hh:mm'\n    - est dans l'intervalle '00:00' à '23:59'\n    - est supèrieure ou égale à hdm.\"\"\"\n    while True:\n        hd = input(msg)\n        if len(hd) != 5 or \\\n                hd[2] != ':' or \\\n                not hd[:2].isdigit() or \\\n                not hd[3:].isdigit():\n            print('Format incorrect!')\n            continue\n\n        if 0 > int(hd[:2]) or int(hd[:2]) > 23 or \\\n                0 > int(hd[3:]) or int(hd[3:]) > 59:\n            print('Date incorrecte!')\n            continue\n\n        if hd < hdm:\n            print(\"L'heure doit être >=\", hdm)\n            continue\n\n        return hd\n\n\ndef saisie_revision(matiere, hdm):\n    \"\"\"Saisie de l'heure de début et de fin de révision d'une seule matière.\"\"\"\n    while True:\n        hdr = saisie_heure(\n            \"Heure début de révision (%s) >= %s : \" % (matiere, hdm), hdm)\n        hfr = saisie_heure(\"Heure de fin de révision (%s) > %s : \" %\n                           (matiere, hdr), hdr)\n\n        if hfr > hdr:\n            return hdr, hfr\n        else:\n            print(\"L'heure de fin de révision doit être >\", hdr)\n\n\n# Heures de révision de Physique\nhd1, hf1 = saisie_revision(\"Physiques\", '00:00')\n\n# Heures de révision de Math\nhd2, hf2 = saisie_revision(\"Mathématiques\", hf1)\n\n# Calculer la durée de révision de Physique en minutes\ntr1 = time_to_min(hf1) - time_to_min(hd1)\n# Calculer la durée de révision de Math en minutes\ntr2 = time_to_min(hf2) - time_to_min(hd2)\n# Calculer la durée totale de révision en minutes\ntt = tr1 + tr2\n\n# Affichage des résultats\nprint('Temps de révision')\nprint('Physique :', min_to_time(tr1))\nprint('Math :', min_to_time(tr2))\nprint('Durée Totale :', min_to_time(tt))"
+      },
+      {
+        "codeId": 15,
+        "titre": "Version 3",
+        "description": "Dans cette version on peut calculer le temps de révision de plusieurs matières au lieu de deux.",
+        "langage": "python",
+        "code": "\ndef time_to_min(time):\n    \"\"\"Convertit un temps au format 'hh:mm' en un nombre de minutes.\"\"\"\n    hh = int(time[:2])\n    mm = int(time[3:])\n    return 60 * hh + mm\n\n\ndef min_to_time(min):\n    \"\"\"Convertit un nombre de minutes en une heure au format 'hh:mm' \"\"\"\n    hh, mm = min // 60, min % 60\n    return '%02d:%02d' % (hh, mm)\n\n\ndef saisie_heure(msg, hdm):\n    \"\"\"Assure la saisie d'une date valide qui :\n    - respecte le format 'hh:mm'\n    - est dans l'intervalle '00:00' à '23:59'\n    - est supèrieure ou égale à hdm.\"\"\"\n    while True:\n        hd = input(msg)\n        if len(hd) != 5 or \\\n                hd[2] != ':' or \\\n                not hd[:2].isdigit() or \\\n                not hd[3:].isdigit():\n            print('Format incorrect!')\n            continue\n\n        if 0 > int(hd[:2]) or int(hd[:2]) > 23 or \\\n                0 > int(hd[3:]) or int(hd[3:]) > 59:\n            print('Date incorrecte!')\n            continue\n\n        if hd < hdm:\n            print(\"L'heure doit être >=\", hdm)\n            continue\n\n        return hd\n\n\ndef saisie_revision(matiere, hdm):\n    \"\"\"Saisie de l'heure de début et de fin de révision d'une seule matière.\"\"\"\n    while True:\n        hdr = saisie_heure(\n            \"Heure début de révision (%s) >= %s : \" % (matiere, hdm), hdm)\n        hfr = saisie_heure(\"Heure de fin de révision (%s) > %s : \" %\n                           (matiere, hdr), hdr)\n\n        if hfr > hdr:\n            return hdr, hfr\n        else:\n            print(\"L'heure de fin de révision doit être >\", hdr)\n\n\n# Saisie du nombre de matières\nn = int(input('Donner le nombre de matières à réviser : '))\n\nl_revision = []\ntrt = 0\nhdm = '00:00'\nfor i in range(n):\n    print('Matière n°', (i+1))\n\n    # Matière à réviser\n    matiere = input('Donner le nom de la matière : ')\n\n    # Heures de révision de Physique\n    hdr, hfr = saisie_revision(matiere, hdm)\n\n    # Temps de révision\n    trm = time_to_min(hfr) - time_to_min(hdr)\n\n    # Temps de révision total\n    trt += trm\n\n    # ajouter le nom de la matière\n    # et le temps de révision\n    l_revision.append((matiere, trm))\n\n    hdm = hfr\n\n# Affichage des résultats\nprint('Temps de révision')\nfor matiere, tr in l_revision:\n    print(matiere, ':', min_to_time(tr))\n\nprint('Durée Totale :', min_to_time(trt))"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "titre": "Leçon 9 : Jeu Impair Gagnant",
+    "description": "L'objectif de ce jeu est de présenter les nombres aléatoires, les structures itératives et les boucles.",
+    "codes": [
+      {
+        "codeId": 16,
+        "titre": "",
+        "langage": "python",
+        "code": "import random\n\ndef saisie_nombre():\n    while True:\n        nch = input(\"Donner un nombre de quatre chiffres : \")\n        if nch.isdigit():\n            n = int(nch)       \n            if 1000 <= n <= 9999:\n                return n\n        print(\"Saisie incorrecte!\")\n\n\ndef compter_chiffres(n):\n    nch = str(n)\n    nci = 0\n    for c in nch:\n        if c in ['1', '3', '5', '7', '9']:\n            nci += 1\n    return nci\n\n\n# Programme principal\nsj1, sj2 = 0, 0\nfor i in range(3):\n    print('Tour', (i+1))\n    \n    j1 = saisie_nombre()\n    j2 = random.randint(1000, 9999)\n\n    p = j1 * j2\n\n    print(\"Choix joueur : %d - Choix ordinateur : %d\" % (j1, j2))\n    print(\"%d * %d = %d\" % (j1, j2, p))\n\n    nci = compter_chiffres(p)\n    print(\"Le nombre de chiffres impairs :\", nci)\n\n    if nci % 2 == 1:\n        print('Le nombre de chiffres impairs est impair. Vous gagnez!')\n        sj1 += 1\n    else:\n        print('Le nombre de chiffres impairs est pair. Vous perdez!')\n        sj2 += 1\n\nif sj1 > sj2:\n    print('Vous avez gagné au jeu : %d contre %d' % (sj1, sj2))\nelse:\n    print('Vous avez perdu au jeu :  %d contre %d' % (sj1, sj2))"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "titre": "Leçon 10 : Test de calcul mental",
+    "description": "L'objectif de ce jeu est de présenter les nombres aléatoires, les structures itératives et les boucles.",
+    "codes": [
+      {
+        "codeId": 17,
+        "titre": "Afficher les opérations",
+        "langage": "python",
+        "code": "import random\n\nprint('Test de calcul mental')\n\nnbq = 3\n\nfor i in range(nbq):\n op = random.choice(['+','-','*','/'])\n\n v1 = random.randint(1, 10)\n v2 = random.randint(1, 10)\n\n rep = int(input('Q(%d/%d) %d %s %d = ? ' % (i+1, nbq, v1, op, v2)))"
+      },
+      {
+        "codeId": 18,
+        "titre": "Evaluer les réponses",
+        "langage": "python",
+        "code": "import random\n\nprint('Test de calcul mental')\n\nnbq = 3\n\nfor i in range(nbq):\n    op = random.choice(['+','-','*','/'])\n\n    v1 = random.randint(1, 10)\n    v2 = random.randint(1, 10)\n\n    rep = int(input('Q(%d/%d) %d %s %d = ? ' % (i+1, nbq, v1, op, v2)))\n\n    if op == '+': res = v1 + v2\n    elif op == '*': res = v1 * v2\n    elif op == '-': res = v1 - v2\n    else: res = v1 // v2\n\n    if rep == res:\n        print('Correct!')\n    else:\n        print('Incorrect!')\n        print('%d %s %d = %d ' % (v1, op, v2, res))"
+      },
+      {
+        "codeId": 19,
+        "titre": "Afficher le score",
+        "langage": "python",
+        "code": "# Calculator\nimport random\n\nprint('Test de calcul mental')\n\n# Nombre de questions\nnbq = 10\n\n# Le score actuel\nscore = nbq\n\nfor i in range(nbq):\n    # choisir une opération au hasard\n    op = random.choice(['+','-','*','/'])\n\n    if op in ['+', '-']:\n        # l'intervalle pour les opérations \n        # d'addition et de soustraction\n        binf, bsup = 10, 99\n    elif op in ['*', '/']:\n        # l'intervalle pour les opérations \n        # de multiplication et de division\n        binf, bsup = 1, 20\n\n    # On sélectionne deux nombres au hasard\n    # dans l'intervalle [binf, bsup]\n    v1 = random.randint(binf, bsup)\n    v2 = random.randint(binf, bsup)\n\n    # On calcule le résultat de l'opération\n    if op == '+':\n        res = v1 + v2\n    elif op == '-':\n        res = v1 - v2\n    elif op == '*':\n        res = v1 * v2\n    else:\n        v1 = v1 * v2\n        res = v1 // v2\n    \n    # L'utilisateur saisie la réponse à la question\n    rep = int(input('Q(%d/%d) %d %s %d = ? ' % (i+1, nbq, v1, op, v2)))\n\n    # On vérifie l'exactitude de la réponse\n    if rep == res:\n        print('Correct!')\n    else:\n        # en cas d'erreur le joueur est pénalisé\n        score -= 1\n        print('Non, incorrect!')\n        print('%d %s %d = %d ' % (v1, op, v2, res))\n\n# On affiche le score\nprint(\"Votre score est : %d/%d\" % (score, nbq))\n\n# On affiche une remarque selon le score\nif score == 10:\n    print('Vous êtes un dur en calcul mental!')\nelif score >= 8:\n    print('Très bien!')\nelif score >= 6:\n    print('Au dessus de la moyenne!')\nelse:\n    print('Vous pourriez faire mieux!')"
+      }
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+<div class="translated-items-categories">
+  <div class="recherche">
+      <h2>Recherche</h2>
+      <form #f (submit)="search(keywords)" novalidate>
+        <input type="search" name="keywords" [(ngModel)]="keywords" (keyup.enter)="search(keywords)" placeholder="Mots clés à chercher" autocomplete="off">
+        <button type="submit" class="btn btn-secondary">Chercher</button>
+      </form>
+  </div>
+
+  <h1>Traduction</h1>
+
+  <div *ngFor="let categorie of categories">
+    <h2>{{categorie}}</h2>
+    <div *ngFor="let sousCategorie of subcategories[categorie]">
+      <app-translated-items-list [items]="items[categorie][sousCategorie]"></app-translated-items-list>
+    </div>
+  </div>
+</div>

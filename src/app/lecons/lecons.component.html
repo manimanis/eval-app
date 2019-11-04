@@ -1,0 +1,31 @@
+<div class="lecons">
+  <h1>Code source leçons</h1>
+  <div>
+    <button class="d-inline-block m-1 btn" [ngClass]="{ 'btn-primary': !parLecon, 'btn-light': parLecon }"
+    (click)="selectLecon(-1)">Toutes</button>
+    <button *ngFor="let lecon of lecons; let i = index" class="d-inline-block m-1 btn"
+    [ngClass]="{ 'btn-primary': parLecon && i === numLecon, 'btn-light': parLecon && i !== numLecon }" (click)="selectLecon(i)">Leçon {{i+2}}</button>
+  </div>
+  <div *ngIf="parLecon && lecons.length > numLecon">
+    <h2>{{lecons[numLecon].titre}}</h2>
+    <p *ngIf="lecons[numLecon].description !== ''">{{lecons[numLecon].description}}</p>
+
+    <div *ngFor="let code of lecons[numLecon].codes">
+      <h3>{{code.titre}}</h3>
+      <p *ngIf="code.description !== ''">{{code.description}}</p>
+      <app-code-snippet [language]="'language-' + code.langage" [code]="code.code"></app-code-snippet>
+    </div>
+  </div>
+  <div *ngIf="!parLecon">
+    <div *ngFor="let lecon of lecons">
+        <h2>{{lecon.titre}}</h2>
+        <p *ngIf="lecon.description !== ''">{{lecon.description}}</p>
+        <div *ngFor="let code of lecon.codes">
+          <h3>{{code.titre}}</h3>
+          <p *ngIf="code.description !== ''">{{code.description}}</p>
+          <app-code-snippet [language]="'language-' + code.langage" [code]="code.code"></app-code-snippet>
+        </div>
+      </div>
+  </div>
+
+</div>

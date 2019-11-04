@@ -1,0 +1,29 @@
+<div class="batonnets-one-row-game">
+  <div *ngIf="gameOver">
+    <h1>Jeu de batonnets</h1>
+    <button (click)="rejouer()">Démarrer</button>
+  </div>
+  <div *ngIf="!gameOver">
+      <div class="heading">
+        <div><span class="nbre-batonnets">{{nbreBatonnets}}</span></div>
+        <div><span class="selected-batonnets">{{selectedCount}}</span></div>
+        <div *ngIf="selectedCount > 0"><span class="reste-batonnets">{{nbreBatonnets - selectedCount}}</span></div>
+      </div>
+      <div class="game-board">
+          <div class="batonnet-place" *ngFor="let batonnet of batonnets; let i = index;">
+            <div [ngClass]="{'batonnet': batonnet >=0, 'selected': batonnet == 1}" (click)="batonnetClicked(i)"></div>
+          </div>
+
+          <div class="commands">
+            <div class="col" [ngClass]="{'current-player': tourJoueur === 'Joueur 1'}">
+                <p>Joueur 1</p>
+                <button *ngIf="tourJoueur === 'Joueur 1'" (click)="jouerTour()" [disabled]="selectedCount === 0">Jouer</button>
+            </div>
+            <div class="col" [ngClass]="{'current-player': tourJoueur === 'Joueur 2'}">
+                <p>Joueur 2</p>
+                <button *ngIf="tourJoueur === 'Joueur 2'" (click)="jouerTour()" [disabled]="selectedCount === 0">Jouer</button>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>

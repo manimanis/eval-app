@@ -1,0 +1,8 @@
+.paste-code .code-bin {
+  position: relative;
+}
+
+.paste-code .code-bin button {
+  position: absolute;
+  right: 0;
+}

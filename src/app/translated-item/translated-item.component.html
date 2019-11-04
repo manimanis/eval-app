@@ -1,0 +1,13 @@
+<div class="translated-item">
+  <h4 *ngIf="afficherTitre">{{ titre }}</h4>
+  <div class="row">
+      <div class="col-sm-12 col-md-6 align-items-stretch">
+        <h5>Algorithme</h5>
+        <app-code-snippet language="language-algorithm" [code]="algorithme"></app-code-snippet>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <h5>Python</h5>
+        <app-code-snippet language="language-python" [code]="python"></app-code-snippet>
+      </div>
+  </div>
+</div>

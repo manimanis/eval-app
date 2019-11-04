@@ -1,0 +1,95 @@
+.batonnets-one-row-game {
+  min-height: 100vh;
+}
+
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #cddc39;
+  border: #333 solid 1px;
+  width: 100%;
+  height: 300px;
+  margin: 20px auto 250px;
+}
+
+.batonnet-place {
+  position: relative;
+  width: 3%;
+  height: 100%;
+  margin: 0 0.87%;
+  border: #333 solid 1px;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.batonnet {
+  position: absolute;
+  background-color: #FFC107;
+  border: #333 solid 1px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.batonnet.selected {
+  top: 20px;
+  background-color: red;
+}
+
+.commands {
+  margin: 2em 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.commands .col {
+  width: calc(50% - 40px);
+  margin: 10px 5px;
+  padding: 10px;
+  border: dimgray solid 1px;
+  border-radius: 10px;
+  font-size: 20pt;
+}
+
+.commands .col button {
+  font-size: 12pt;
+}
+
+.commands .col.current-player {
+  background-color: #cddc39;
+}
+
+.heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.heading div {
+  width: 150px;
+  text-align: center;
+}
+
+.heading span {
+  font-size: 36pt;
+  font-weight: bold;
+  display: block;
+}
+
+.heading span::after {
+  font-size: 9pt;
+  display: block;
+}
+
+.heading span.nbre-batonnets::after {
+  content: 'Batonnets';
+}
+
+.heading span.selected-batonnets::after {
+  content: 'Sélectionnés';
+}
+
+.heading span.reste-batonnets::after {
+  content: 'Reste';
+}

@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+h1 {
+  color: #F44336;
+}
+
+h2 {
+  background-color: #E91E63;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+h3 {
+  color: #9C27B0;
+}
+
+h4 {
+  color: #3f51b5;
+}
+
+h5 {
+  color: #2196F3;
+}

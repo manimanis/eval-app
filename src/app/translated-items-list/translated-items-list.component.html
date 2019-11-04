@@ -1,0 +1,4 @@
+<div class="translated-items-list">
+  <h3 *ngIf="items.length > 0">{{items[0].sousCategorie}}</h3>
+  <app-translated-item *ngFor="let item of items; let i = index" [titre]="item.titre" [algorithme]="item.algorithme" [python]="item.python"></app-translated-item>
+</div>

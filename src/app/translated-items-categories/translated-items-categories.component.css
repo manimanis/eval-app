@@ -1,0 +1,33 @@
+.translated-items-categories h1 {
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.translated-items-categories .recherche {
+  background-color: #ff9800;
+  padding: 0.5em;
+  border-radius: 1em;
+  margin: 1.5em 0;
+}
+
+.translated-items-categories .recherche h2 {
+  text-align: center;
+  letter-spacing: 10px;
+  background-color: transparent;
+}
+
+.translated-items-categories form {
+  display: flex;
+  margin: 1.5em auto;
+}
+
+.translated-items-categories form input[type=search] {
+  display: block;
+  width: 90%;
+  margin: 0 5px;
+  padding: 0.5em;
+  border: #333 solid 1px;
+  border-radius: 8px;
+
+}
+

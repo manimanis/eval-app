@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "categorie": "Structures de contrôle",
+    "sousCategorie": "Structures de contrôle conditionnelles",
+    "titre": "Forme simple réduite",
+    "algorithme": "//Valeur absolue d'un nombre\nva ← a\nsi a < 0 alors\n    a ← -a\nfinsi\nafficher(\"|\", a, \"|=\", va)",
+    "python": "# Valeur absolue d'un nombre\nva = a\nif a < 0:\n    a = -a\n\nprint('|', a, '|=', va)",
+    "keywords": ["si", "if", "alors"]
+  },
+  {
+    "id": 2,
+    "categorie": "Structures de contrôle",
+    "sousCategorie": "Structures de contrôle conditionnelles",
+    "titre": "Forme alternative",
+    "algorithme": "// Signe d'un nombre\nsi a >= 0 alors\n    afficher(\"positif\")\nsinon\n    afficher(\"négatif\")\nfinsi",
+    "python": "# Signe d'un nombre\nif a >= 0:\n    print('positif')\nelse:\n    print('négatif')\n ",
+    "keywords": ["si", "if", "alors", "sinon", "else"]
+  },
+  {
+    "id": 3,
+    "categorie": "Structures de contrôle",
+    "sousCategorie": "Structures de contrôle conditionnelles",
+    "titre": "Forme complète",
+    "algorithme": "// Comparaison de deux nombres\nsi a > b alors\n    afficher(a, \">\", b)\nsinon si a < b alors\n    afficher(a, \"<\", b)\nsinon\n    afficher(a, \"=\", b)\nfinsi",
+    "python": "# Comparaison de deux nombres\nif a > b:\n    print(a, '>', b)\nelif a < b:\n    print(a, '<', b)\nelse:\n    print(a, '=', b)\n ",
+    "keywords": ["si", "if", "alors", "sinon", "else", "sinon si", "else if", "elif"]
+  },
+  {
+    "id": 4,
+    "categorie": "Structures de contrôle",
+    "sousCategorie": "Structures de contrôle itératives",
+    "titre": "Structure Pour - Compter de 0 à n-1",
+    "algorithme": "// Affichage des chiffres impairs\n// dans une chaine ch\npour i de 0 à long(ch)-1 faire\n    si entier(ch[i]) mod 2 = 1 alors\n        afficher(ch[i])\n    finsi\nfinpour",
+    "python": "# Affichage des chiffres impairs\n# dans une chaine\nfor i in range(len(ch)):\n    if int(ch[i]) % 2 == 1:\n        print(ch[i])\n \n ",
+    "keywords": ["pour", "for"]
+  },
+  {
+    "id": 5,
+    "categorie": "Structures de contrôle",
+    "sousCategorie": "Structures de contrôle itératives",
+    "titre": "Structure Pour - Compter de 1 à n",
+    "algorithme": "// Affichage des nombres\n// de 1 à n\npour i de 1 à n faire\n    afficher(i)\nfinpour",
+    "python": "# Affichage des nombres\n# de 1 à n\nfor i in range(1, n+1):\n    print(i)\n ",
+    "keywords": ["pour", "for", "faire"]
+  },
+  {
+    "id": 6,
+    "categorie": "Structures de contrôle",
+    "sousCategorie": "Structures de contrôle itératives",
+    "titre": "Structure Répéter ... Jusqu'à",
+    "algorithme": "// Saisie d'un nombre\n// dans l'intervalle [10,99]\nrépéter\n    lire(n)\njusqu'a 10 <= n <= 99\n ",
+    "python": "# Saisie d'un nombre\n# dans l'intervalle [10,99]\nwhile True:\n    n = int(input('Entrer n : '))\n    if 10 <= n <= 99:\n        break",
+    "keywords": ["répéter", "jusqu'à", "jusqu'a", "while"]
+  },
+  {
+    "id": 7,
+    "categorie": "Structures de contrôle",
+    "sousCategorie": "Structures de contrôle itératives",
+    "titre": "Structure Tant que ... faire",
+    "algorithme": "// Recherche d'un caractère\np ← -1\ni ← 0\ntantque (p = -1) et (i < long(ch)) faire\n    si ch[i] = c alors\n        p ← i\n    finsi\n    i ← i + 1\nfin tantque",
+    "python": "# Recherche d'un caractère\np = -1\ni = 0\nwhile p == -1 and i < len(ch):\n    if ch[i] == c:\n        p = i\n \n    i = i + 1\n ",
+    "keywords": ["tantque", "tant que", "tant", "faire"]
+  },
+  {
+    "id": 8,
+    "categorie": "Sous-programmes",
+    "sousCategorie": "Modules",
+    "titre": "Procédures",
+    "algorithme": "// Afficher les nombres premiers\nprocédure nombres_premiers(n:entier)\n    pour i de 2 à n faire\n        si premier(i) alors\n            afficher(i)\n        finsi\n    finpour\nfin afficher_premiers",
+    "python": "# Afficher les nombres premiers\ndef nombres_premiers(n):\n    for i in range(2, n+1):\n        if premier(i):\n            print(i)\n \n \n ",
+    "keywords": ["sous", "programme", "sous-programme", "procedure", "procédure", "def", "return"]
+  },
+  {
+    "id": 9,
+    "categorie": "Sous-programmes",
+    "sousCategorie": "Modules",
+    "titre": "Fonctions",
+    "algorithme": "// Tester si un nombre est premier\nfonction premier(n:entier):booléen\n    c ← 2\n    pour i de 2 à n div 2 faire\n        si n mod i = 0 alors\n            c ← c + 1\n        finsi\n    finpour\n    premier ← c = 2\nfin premier",
+    "python": "# Tester si un nombre est premier\ndef premier(n):\n    c = 2\n    for i in range(2, n div 2 + 1):\n        if n % i == 0:\n            c = c + 1\n \n \n    return c == 2\n ",
+    "keywords": ["sous", "programme", "sous-programme", "fonction", "def", "return"]
+  }
+]

@@ -1,0 +1,11 @@
+<div class="paste-code">
+  <form #f (submit)="generateCode()" novalidate>
+    <textarea class="form-control" rows="10" placeholder="Coller votre code ici..." name="code" [(ngModel)]="code"></textarea>
+    <button type="submit">Générer & Copier</button>
+  </form>
+
+  <div class="code-bin">
+      <div>{{generatedCode}}</div>
+  </div>
+</div>
+
