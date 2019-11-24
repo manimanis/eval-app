@@ -93,3 +93,8 @@
 .heading span.reste-batonnets::after {
   content: 'Reste';
 }
+
+.players-names label {
+  display: inline-block;
+  width: 10em;
+}

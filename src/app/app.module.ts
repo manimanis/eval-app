@@ -13,6 +13,9 @@ import { CodeSnippetComponent } from './code-snippet/code-snippet.component';
 import { PasteCodeComponent } from './paste-code/paste-code.component';
 import { LeconsComponent } from './lecons/lecons.component';
 import { BatonnetsOneRowGameComponent } from './batonnets-one-row-game/batonnets-one-row-game.component';
+import { CodeBeautifyComponent } from './code-beautify/code-beautify.component';
+import { LoginComponent } from './login/login.component';
+import { TravauxComponent } from './travaux/travaux.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { BatonnetsOneRowGameComponent } from './batonnets-one-row-game/batonnets
     CodeSnippetComponent,
     PasteCodeComponent,
     LeconsComponent,
-    BatonnetsOneRowGameComponent
+    BatonnetsOneRowGameComponent,
+    CodeBeautifyComponent,
+    LoginComponent,
+    TravauxComponent
   ],
   imports: [
     BrowserModule,

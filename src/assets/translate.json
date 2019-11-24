@@ -1,5 +1,29 @@
 [
   {
+    "id": 10,
+    "categorie": "Actions Simples",
+    "titre": "Affectation",
+    "algorithme": "// affecter une valeur à une variable\nnom ← \"Sami\"\nage ← 19\nest_garcon ← Vrai \nnote ← 15.5",
+    "python": "# affecter une valeur à une variable\nnom = \"Sami\"\nage = 19\nest_garcon = True\nnote = 15.5",
+    "keywords": ["affectation"]
+  },
+  {
+    "id": 11,
+    "categorie": "Actions Simples",
+    "titre": "Affichage",
+    "algorithme": "// Afficher un résultat\nafficher(\"Bonjour\")\na ← 15\nb ← 20\nc ← a+b\nafficher(a,\"+\",b,\"=\",c)\nafficher(\"%d + %d = %d\" % (a, b, c))",
+    "python": "# Afficher un résultat\nprint(\"Bonjour\")\na = 15\nb = 20\nc = a + b\nprint(a, \"+\", b, \"=\", c)\nprint(\"%d + %d = %d\" % (a, b, c))",
+    "keywords": ["affichage"]
+  },
+  {
+    "id": 12,
+    "categorie": "Actions Simples",
+    "titre": "Entrées",
+    "algorithme": "afficher(\"Quel est votre nom : \")\nlire(nom)\nafficher(\"Quel est votre age : \")\nlire(age)\nafficher(\"Quelle est votre moyenne : \")\nlire(moy)",
+    "python": "\nnom = input(\"Quel est votre nom : \")\n\nage = int(input(\"Quel est votre age : \"))\n\nmoy = float(input(\"Quelle est votre moyenne : \"))",
+    "keywords": ["entrées"]
+  },
+  {
     "id": 1,
     "categorie": "Structures de contrôle",
     "sousCategorie": "Structures de contrôle conditionnelles",

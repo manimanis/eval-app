@@ -1,7 +1,23 @@
 <div class="batonnets-one-row-game">
-  <div *ngIf="gameOver">
+  <div class="players-names" *ngIf="gameOver">
     <h1>Jeu de batonnets</h1>
-    <button (click)="rejouer()">Démarrer</button>
+    <div class="form-row my-2">
+      <div class="col-sm-6">
+        <label for="player1Name">
+          Nom du 1<sup>er</sup> joueur
+        </label>
+        <input id="player1Name" class="form-control" type="text" [(ngModel)]="player1Name" placeholder="Nom du joueur">
+      </div>
+      <div class="col-sm-6">
+        <label for="player2Name">
+          Nom du 2<sup>ème</sup> joueur
+        </label>
+        <input id="player2Name" class="form-control" type="text" [(ngModel)]="player2Name" placeholder="Nom du joueur">
+      </div>
+    </div>
+
+    <p *ngIf="player1Name === player2Name"><small>Veuillez indiquer des noms différents.</small></p>
+    <button class="btn btn-warning" [disabled]="player1Name === player2Name" (click)="rejouer()">Démarrer</button>
   </div>
   <div *ngIf="!gameOver">
       <div class="heading">
@@ -15,13 +31,13 @@
           </div>
 
           <div class="commands">
-            <div class="col" [ngClass]="{'current-player': tourJoueur === 'Joueur 1'}">
-                <p>Joueur 1</p>
-                <button *ngIf="tourJoueur === 'Joueur 1'" (click)="jouerTour()" [disabled]="selectedCount === 0">Jouer</button>
+            <div class="col" [ngClass]="{'current-player': tourJoueur === player1Name}">
+                <p>{{player1Name}}</p>
+                <button *ngIf="tourJoueur === player1Name" (click)="jouerTour()" [disabled]="selectedCount === 0">Jouer</button>
             </div>
-            <div class="col" [ngClass]="{'current-player': tourJoueur === 'Joueur 2'}">
-                <p>Joueur 2</p>
-                <button *ngIf="tourJoueur === 'Joueur 2'" (click)="jouerTour()" [disabled]="selectedCount === 0">Jouer</button>
+            <div class="col" [ngClass]="{'current-player': tourJoueur === player2Name}">
+                <p>{{player2Name}}</p>
+                <button *ngIf="tourJoueur === player2Name" (click)="jouerTour()" [disabled]="selectedCount === 0">Jouer</button>
             </div>
           </div>
       </div>

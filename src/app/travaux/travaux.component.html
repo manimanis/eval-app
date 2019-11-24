@@ -1,0 +1,38 @@
+<div class="travaux">
+  <div>
+    <h2>Recherche</h2>
+    Rechercher par :
+    <select>
+      <option>Utilisateur</option>
+      <option>Titre</option>
+      <option>Catégorie</option>
+      <option>Date envoi</option>
+    </select>
+    <select>
+      <option *ngFor="let user of users" value="{{user.id}}">
+        {{user.fullname}}
+      </option>
+    </select>
+  </div>
+  <div class="row">
+    <div *ngFor="let travail of travaux; let i = index" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card my-1">
+        <div class="card-body">
+          <h4 class="card-title">{{travail.titre}}</h4>
+          <div class="date-envoi">{{travail.dateEnvoi | date: 'dd/MM/yyyy, HH:mm':'+1'}}</div>
+          <div class="type-name">
+            {{travail.typeName }}
+          </div>
+          <div *ngIf="travail.user">
+            <div class="user-type">{{travail.user.usertype}}</div>
+            <div class="user-fullname">{{travail.user.fullname}}</div>
+            <div class="user-name">{{travail.user.username}}</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a class="btn btn-dark" href="#">Détails...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
